@@ -3,8 +3,11 @@
   	<div class="shop-content">
   		<a href="">
   			<img :src="shopImg" alt="">
-			<div class="newshop">
+			<div class="company-description">
 				{{ shopContent }}
+			</div>
+			<div class="shop-price">
+				{{ shopPrice }}
 			</div>
   		</a>
   	</div>
@@ -22,23 +25,37 @@ export default {
 
 <style scoped lang='less'>
 	.shop-content{
+		border: 1px solid #999999;
 		width: 285px;
 		height: 400px;
+		box-sizing: border-box;
 		position: relative;
-		background-color: black;
+		background-color: white;
 		float: left;
 		margin-left: 20px; 
 		margin-bottom: 20px;
 		img{
 			width: 100%;
-			height: 100%;
+			height: 300px;
 		}
-		.newshop{
-			border: 2px solid white;
-			position: absolute;
-			top: 240px;
-			left: 95px;
-			color: white;
+		.company-description{
+			margin-top: 20px;
+			margin-bottom: 10px;
+			font-size: 14px;
+			text-align: center;
+		}
+		.shop-price{
+			width: 100px;
+			height: 30px;
+			margin: 0 auto;
+			font-size: 20px;
+			color: #e83712;
+			line-height: 30px;
+			padding:20 10;
+			text-align: center;
+			border: 1px solid #e83712;
+			border-radius: 5px;
+			box-sizing: border-box;
 		}
 	}
 	.hotshop:nth-child(4n+1){
