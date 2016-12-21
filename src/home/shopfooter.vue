@@ -4,8 +4,7 @@
 	</div>
 </template>
 <script>
-	import company1 from './companydescription.vue'
-
+	import company1 from '../component/companyDetail.vue'
 	export default {
 		props: ['companyDescription'],
 		data () {

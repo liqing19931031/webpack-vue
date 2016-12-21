@@ -22,7 +22,7 @@ import shopfooter from './shopfooter.vue'
 let imgItem = [];
 let imgItem2 = [];
 let company = {
-	companyName: '李大王皮包公司',
+	companyName: '浙江杭州,李大王皮包公司,专卖各种皮包皮',
 	companyImg: '',
 	shopTime: '2012-12-12',
 	phone: '010-1008610086',

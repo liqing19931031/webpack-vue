@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <header>
+  <header v-if="isdoc">
     <div class="contain">
       Hello<span class="user">Liqing</span> <a href="">Login</a> <a href="">Register</a>
       <div class="text-right">
@@ -8,10 +8,10 @@
       </div>
     </div>
   </header>
-  <div class="top-nav">
+  <div class="top-nav" v-if="isdoc">
     
   </div>
-  <div class="topnav">
+  <div class="topnav" v-if="isdoc">
     <div class="contain">
       <ul>
         <li>
@@ -39,7 +39,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/aa">
+          <router-link to="/photo">
             <div class="border"></div>
             PHOTO
           </router-link>
@@ -47,12 +47,18 @@
       </ul>
     </div>
   </div>
-  <router-view></router-view>
+  <router-view :params="isdoc"></router-view>
   </div>
 </template>
 
 <script>
-
+export default {
+  data () {
+    return {
+      isdoc: this.meta === 1 ? false : true 
+    }
+  }
+}
 </script>
 
 <style lang='less'>
