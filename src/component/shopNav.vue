@@ -1,12 +1,22 @@
 <template>
-	<div class="good-nav">
-		<div class="nav-title text-big">
-			Classification of goods
+	<div class="all-good">
+		<div class="good-nav">
+			<div class="nav-title text-big">
+				Classification of goods
+			</div>
+			<div class="text-normal">
+				 <div class="nav-content" v-for='nav in this.data'>
+				 	{{nav}}
+				 </div>
+			</div>
 		</div>
-		<div class="text-normal">
-			 <div class="nav-content" v-for='nav in this.data'>
-			 	{{nav}}
-			 </div>
+		<div class="good-view">
+			<div class="view-title">
+				
+			</div>
+			<div class="view-content">
+				
+			</div>
 		</div>
 	</div>
 </template>
@@ -22,8 +32,10 @@
 </script>
 <style scoped lang='less'>
 @import '../css/common.less';
+.all-good{
+	float: left;
+	margin-top: 20px;
 	.good-nav{
-		margin-top: 20px;
 		float: left;
 		width: 280px;
 		border:1px solid @borderColor;
@@ -45,4 +57,14 @@
 			padding: 10px 0px;
 		}
 	}
+	.good-view{
+		float: left;
+		width: 900px;
+		margin-left: 20px;
+		.view-title{
+			background-color: @bgColor;
+			height: 40px;
+		}
+	}
+}
 </style>
