@@ -71,6 +71,8 @@ export default {
 </script>
 <style lang='less'>
 	@import '../css/common.less';
+	@import '../css/base/fn.less';
+	@import '../css/icon/weui-icon_font.less';
 	.banner{
 		height: 400px;
 		background: url(../assets/banner.jpg) center center no-repeat;
