@@ -4,7 +4,11 @@
 	<div class="shop-view">
 		<slide :slides="slides"></slide>
 	</div>
-    <shop-nav :shop-nav="navData"></shop-nav>
+    <shop-nav 
+    v-on:selectView="nowView"
+    :shop-nav="navData"
+	:shop-content="shopContent[nowView]"
+    ></shop-nav>
     <div class="clearBoth"></div>
   </div>
 </template>
@@ -22,13 +26,20 @@ let company = {
 let navData = [];
 let images = [];
 let slides = [];
+let shopContent = [];
+let nowView = 0;
 for(let a = 0; a < 12; a++){
 	let b = a + 1;
+	shopContent.push({
+		img: require('../assets/shop/shop-' + b + '.jpg' ),
+		price: b,
+		description: '我是第' + b + '个分类下的商品'
+	})
 	if (a < 4) {
 		slides.push({ 
 			img: require('../assets/banner' + b + '.jpg' ),
 			url: ''
-		})	
+		})
 	}
 	navData.push('我是分类' + b)
 	images.push( require('../assets/' + b + '.jpg' ))
@@ -40,6 +51,13 @@ export default {
 			images: images,
 			navData: navData,
 			slides: slides,
+			shopContent: shopContent,
+			nowView: nowView
+		}
+	},
+	methods: {
+		nowView: function(x) {
+			nowView = x;
 		}
 	},
 	components: {
