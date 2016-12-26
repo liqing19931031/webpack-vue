@@ -5,7 +5,7 @@
 				Classification of goods
 			</div>
 			<div class="text-normal">
-				 <div class="nav-content" v-for='nav in shopNav'>
+				 <div v-on:click="selectView(index)" class="nav-content" v-for='(nav, index) in shopNav'>
 				 	{{nav}}
 				 </div>
 			</div>
@@ -38,8 +38,8 @@ export default {
 		}
 	},
 	methods: {
-		selectView: function () {
-			this.$emit('selectView')
+		selectView: function (index) {
+			this.$emit('selectView', index)
 		}
 	}
 }
